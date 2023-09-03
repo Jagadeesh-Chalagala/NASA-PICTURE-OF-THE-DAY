@@ -47,6 +47,10 @@ searchBtn.addEventListener("click", () => {
 });
 window.addEventListener("load", () => {
   callapi(getCurrentImageOfTheDay, date);
+  let storedData = JSON.parse(localStorage.getItem("Searches"));
+  storedData.forEach(element => {
+    addSearchToHistory(element)
+  });
 });
 
 // //functions
